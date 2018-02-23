@@ -1,0 +1,32 @@
+<%= form_with(model: redaction, local: true) do |form| %>
+  <% if redaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(redaction.errors.count, "error") %> prohibited this redaction from being saved:</h2>
+
+      <ul>
+      <% redaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :h %>
+    <%= form.number_field :h, id: :redaction_h %>
+  </div>
+
+  <div class="field">
+    <%= form.label :w %>
+    <%= form.number_field :w, id: :redaction_w %>
+  </div>
+
+  <div class="field">
+    <%= form.label :axis %>
+    <%= form.text_field :axis, id: :redaction_axis %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Redactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>H</th>
+      <th>W</th>
+      <th>Axis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redactions.each do |redaction| %>
+      <tr>
+        <td><%= redaction.h %></td>
+        <td><%= redaction.w %></td>
+        <td><%= redaction.axis %></td>
+        <td><%= link_to 'Show', redaction %></td>
+        <td><%= link_to 'Edit', edit_redaction_path(redaction) %></td>
+        <td><%= link_to 'Destroy', redaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Redaction', new_redaction_path %>

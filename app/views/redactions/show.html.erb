@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>H:</strong>
+  <%= @redaction.h %>
+</p>
+
+<p>
+  <strong>W:</strong>
+  <%= @redaction.w %>
+</p>
+
+<p>
+  <strong>Axis:</strong>
+  <%= @redaction.axis %>
+</p>
+
+<%= link_to 'Edit', edit_redaction_path(@redaction) %> |
+<%= link_to 'Back', redactions_path %>
